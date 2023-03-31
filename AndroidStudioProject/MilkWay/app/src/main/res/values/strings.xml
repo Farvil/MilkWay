@@ -1,3 +1,48 @@
 <resources>
     <string name="app_name">MilkWay</string>
+    <string name="title_activity_preference_activity">Paramètres</string>
+    <string name="title_activity_apropos_activity">A propos</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="action_apropos">A propos</string>
+    <string name="relai1">Barrière 1</string>
+    <string name="relai2">Barrière 2</string>
+    <string name="relai3">Barrière 3</string>
+    <string name="relai4">Barrière 4</string>
+    <string name="reseau_indisponible">Réseau non disponible</string>
+    <string name="erreur_inconnue">Erreur inconnue</string>
+    <string name="relai1_ok">Barrière 1 OK</string>
+    <string name="relai2_ok">Barrière 2 OK</string>
+    <string name="relai3_ok">Barrière 3 OK</string>
+    <string name="relai4_ok">Barrière 4 OK</string>
+    <string name="erreur_connexion_wifi">\"Erreur de connexion au relai wifi : %1$s:%2$d.\"</string>
+    <string name="erreur_flux_sortant">Impossible de récuperer le flux sortant.</string>
+    <string name="erreur_commande_relai">Erreur de commande du relai</string>
+    <string name="erreur_pause_on_off">Erreur de Pause ON/OFF</string>
+    <string name="erreur_fermeture_socket">Erreur de fermeture du socket</string>
+    <string-array name="ButtonNumberEntryValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="ButtonNumberEntries">
+        <item>1 porte</item>
+        <item>2 portes</item>
+        <item>3 portes</item>
+        <item>4 portes</item>
+    </string-array>
+    <string-array name="timeoutEntries">
+        <item>1 sec</item>
+        <item>2 sec</item>
+        <item>3 sec</item>
+        <item>4 sec</item>
+        <item>5 sec</item>
+    </string-array>
+    <string-array name="timeoutEntryValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
 </resources>
