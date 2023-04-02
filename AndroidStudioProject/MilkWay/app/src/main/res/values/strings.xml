@@ -19,6 +19,7 @@
     <string name="erreur_commande_relai">Erreur de commande du relai</string>
     <string name="erreur_pause_on_off">Erreur de Pause ON/OFF</string>
     <string name="erreur_fermeture_socket">Erreur de fermeture du socket</string>
+    <string name="apropos_texte">"\tCette application a été développée dans le but de contrôler des portes Boetech montées avec des robots de traite Lely. \n\n\tPour que cette application fonctionne, vous devez installer une carte de relais wifi 2 contacts ou 4 contacts. Tous les détails sont sur le github de Farvil à l'adresse https://github.com/Farvil/MilkWay. Les cartes supportées sont les suivantes : "</string>
     <string-array name="ButtonNumberEntryValues">
         <item>1</item>
         <item>2</item>
