@@ -14,7 +14,7 @@
     <string name="relai2_ok">Barrière 2 OK</string>
     <string name="relai3_ok">Barrière 3 OK</string>
     <string name="relai4_ok">Barrière 4 OK</string>
-    <string name="erreur_connexion_wifi">\"Erreur de connexion au relai wifi : %1$s:%2$d.\"</string>
+    <string name="erreur_connexion_wifi">"Erreur de connexion au relai wifi : %1$s:%2$d."</string>
     <string name="erreur_flux_sortant">Impossible de récuperer le flux sortant.</string>
     <string name="erreur_commande_relai">Erreur de commande du relai</string>
     <string name="erreur_pause_on_off">Erreur de Pause ON/OFF</string>

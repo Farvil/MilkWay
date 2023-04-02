@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private static final byte[] B4_OFF = new byte[] { (byte) 0xA0, (byte) 0x02, (byte) 0x00, (byte) 0xA2};
 
     // membres
-    private Button [] mButtonList = new Button [MAX_BUTTON_NUMBER];
+    private final Button [] mButtonList = new Button [MAX_BUTTON_NUMBER];
 
     // Preferences (en static pour etre utilises dans le thread)
     private static int sServerPort = DEFAULT_SERVERPORT;
@@ -82,8 +82,8 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         mButtonList[3] = (Button) findViewById(R.id.bouton4);
 
         // Action des boutons
-        for (int i = 0 ; i < mButtonList.length ; i++) {
-            mButtonList[i].setOnTouchListener(this);
+        for (Button button : mButtonList) {
+            button.setOnTouchListener(this);
         }
     }
 
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Deserialise le menu XML et ajoute les items dans l'action bar
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
@@ -229,8 +229,10 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                 ex.printStackTrace();
                 result = App.getRes().getString(R.string.erreur_connexion_wifi, sServerIp, sServerPort);
                 try {
-                    socket.close();
-                    socket = null;
+                    if (socket != null) {
+                        socket.close();
+                        socket = null;
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                     socket = null;
@@ -273,7 +275,6 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                 } catch (IOException e) {
                     e.printStackTrace();
                     result = App.getRes().getString(R.string.erreur_fermeture_socket);
-                    socket = null;
                 }
             }
 
