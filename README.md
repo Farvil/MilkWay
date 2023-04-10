@@ -29,7 +29,7 @@ TO DO
 ### Connexion du relai à la box ou routeur wifi
 TO DO
 
-## Licence 
+## Licence et non-responsabilité
 MilkWay est une application open source sous licence [GPL version 3](LICENSE). Cela signifie que vous êtes libre de télécharger, utiliser et modifier le code source de l'application, sous réserve de respecter les termes de la licence.
 
 Veuillez noter que l'application est fournie en l'état, sans garantie d'aucune sorte. Je ne suis en aucun cas responsable des dommages éventuels sur le matériel de l'utilisateur.
