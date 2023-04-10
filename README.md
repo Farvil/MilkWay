@@ -15,7 +15,7 @@ Pour l'instant, l'application MilkWay ne fonctionne qu'avec certaines cartes qui
 
 Ces cartes sont disponibles en alimentation 5V ou 12V selon vos préférences. Vous pouvez utiliser un simple chargeur 5V ou 12V pour alimenter la carte. Vous pouvez également prévoir un petit coffret electrique étanche avec un rail DIN comportant un disjoncteur 2A, un transformateur 5V ou 12V et la carte avec des supports en plastique pour rail DIN. Voici l'exemple d'un cablage pour une porte : 
 
-![Photo d'un coffret électrique étanche cablé](images/relai.jpg "Exemple de câblage")
+![Photo d'un coffret électrique étanche cablé](images/coffret.jpg "Exemple de montage")
 
 MilkWay est une application open source sous licence [GPL version 3](LICENSE). Cela signifie que vous êtes libre de télécharger, utiliser et modifier le code source de l'application, sous réserve de respecter les termes de la licence.
 
