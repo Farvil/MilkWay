@@ -1,5 +1,5 @@
-# ![Logo de MilkWay](images/logo.jpg "Logo de MilkWay") MilkWay 
-MilkWay est une application Android simple et gratuite qui permet aux agriculteurs de commander leurs barrières verticales Lely Boetech (ou autres) depuis leur smartphone. Grâce à MilkWay, vous ne perdrez plus de temps à rechercher la télécommande de vos barrières pour diriger les vaches vers le robot de traite.
+# MilkWay
+![Logo de MilkWay](images/logo.jpg "Logo de MilkWay") MilkWay est une application Android simple et gratuite qui permet aux agriculteurs de commander leurs barrières verticales Lely Boetech (ou autres) depuis leur smartphone. Grâce à MilkWay, vous ne perdrez plus de temps à rechercher la télécommande de vos barrières pour diriger les vaches vers le robot de traite.
 ![Application MilkWay](images/application_2portes.jpg "Application MilkWay")
 
 Pour fonctionner, cette application nécéssite l'installation d'une carte de relais Wifi à brancher en parralèle des boutons poussoirs qui commandent les barrières. Cette carte est disponible sur des sites tels que Amazon (pour une livraison rapide), Aliexpress (prix bas mais délai de plusieurs semaines) et bien d'autres. Selon le nombre de barrières à commander, vous aurez besoin d'une carte avec 1, 2 ou 4 relais (courrament appelés relai wifi 2 ou 4 canaux sur les sites marchands). Le prix varie de quelques euros à 25 euros environ. Vous pouvez rechercher ces cartes en tapant "relai ESP8266", "relai wifi 2 canaux", etc sur votre moteur de recherche ou sur le site du revendeur de votre choix. 
