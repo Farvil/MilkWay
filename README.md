@@ -4,11 +4,13 @@
 
 MilkWay est une application Android simple et gratuite qui permet aux agriculteurs de commander leurs barrières verticales Lely Boetech (ou autres) depuis leur smartphone. Grâce à MilkWay, vous ne perdrez plus de temps à rechercher la télécommande de vos barrières pour diriger les vaches vers le robot de traite.
 
+Contrairement à beaucoup d'applications existantes de commande à distance, cette application ne contient pas d'annonces publicitaires et ne collecte pas vos données personnelles.
+
 ![Application MilkWay](images/application_2portes.jpg "Application MilkWay")
 
 ## Matériel nécessaire
 
-Pour fonctionner, cette application nécéssite l'installation d'une carte de relais Wifi à brancher en parralèle des boutons poussoirs qui commandent les barrières. Cette carte est disponible sur des sites tels que Amazon (pour une livraison rapide), Aliexpress (prix bas mais délai de plusieurs semaines) et bien d'autres. Selon le nombre de barrières à commander, vous aurez besoin d'une carte avec 1, 2 ou 4 relais (courrament appelés relai wifi 2 ou 4 canaux sur les sites marchands). Le prix varie de quelques euros à 25 euros environ. Vous pouvez rechercher ces cartes en tapant "relai ESP8266", "relai wifi 2 canaux", etc sur votre moteur de recherche ou sur le site du revendeur de votre choix. 
+Pour fonctionner, cette application nécéssite l'installation d'une carte de relais Wifi à brancher en parralèle des boutons poussoirs qui commandent les barrières. Cette carte est disponible sur des sites tels que Amazon, Ebay, Aliexpress (prix bas mais délai de plusieurs semaines) et bien d'autres. Elle est fabriquée par LC Technology et revendue sous différentes marques comme Dollatek, Daokai. Selon le nombre de barrières à commander, vous aurez besoin d'une carte avec 2 ou 4 relais (courrament appelés relai wifi 2 ou 4 canaux sur les sites marchands). Le prix varie de quelques euros à 25 euros environ. Vous pouvez rechercher ces cartes en tapant "relai ESP8266", "relai wifi 2 canaux", etc sur votre moteur de recherche ou sur le site du revendeur de votre choix. 
 
 Pour l'instant, l'application MilkWay ne fonctionne qu'avec certaines cartes qui doivent absolument contenir un ESP8266 (dans un module ESP-01) et un microcontrolleur STM8S103. Voici les photos des cartes actuellement supportées : 
 
@@ -22,6 +24,11 @@ Ces cartes sont disponibles en alimentation 5V ou 12V selon vos préférences. V
 ## Schéma électrique
 
 ![Schéma électrique](images/schema_electrique.png "Schéma électrique")
+
+
+## Description de la carte de relais wifi
+
+![Description de la carte de relais wifi](images/relai_details.jpg "Description de la carte de relais wifi")
 
 ## Mise en service
 
