@@ -23,6 +23,8 @@ Ces cartes sont disponibles en alimentation 5V ou 12V selon vos préférences. V
 
 ![Photo d'un coffret électrique étanche cablé](images/coffret.jpg "Exemple de montage")
 
+***Conseil*** : Avant de vous lancer dans l'achat d'un coffret et autres composants, assurez-vous que votre carte fonctionne correctement avec l'application MilkWay en vous référant au paragraphe [#première-mise-en-service](#première-mise-en-service)
+
 ## Schéma électrique
 
 Ce schéma électrique est donné à titre d'exemple, libre à vous de l'adapter selon vos besoins : 
@@ -36,13 +38,31 @@ La documentation chinoise de la carte est disponible sur le site du fabricant [h
 
 ![Description de la carte de relais wifi](images/relai_details.jpg "Description de la carte de relais wifi")
 
-## Mise en service
+## Première mise en service
 
-### Fonctionnement en réseau wifi indépendant
-TO DO 
+1. Installer l'application MilkWay sur votre smartphone Android. Celle-ci est disponible sur Google Play. 
+2. Alimentez votre carte wifi en 5V ou 12V selon la version de votre carte en veillant à ne pas inverser la polarité.
+3. Attendre le démarrage de la carte xx secondes
+4. Par défaut lors de la première mise sous tension, la carte devrait être dans le mode 1. Pour cela vérifier que la LED D7 rouge soit allumée. Dans le cas contraire, la LED D5 du mode 2 serait allumée, il faudrait appuyer sur le bouton S1.
+5. Lorsque le mode 1 activé avec sa LED rouge allumée, vous devriez pouvoir vous connecter au réseau wifi de la carte depuis votre smartphone
+6. Vérifier la bonne connexion au réseau wifi
+7. Ouvrir l'application MilkWay et allez dans le menu de configuration de l'application (icône en forme d'engrenage en haut à droite) pour vérifier les paramètres : 
+      - Adresse IP ou DNS : 192.168.104.1
+      - Numéro de port : 8080
+      - Timeout de connexion : 2 sec
+      - Nombre de portes : pas plus que le nombre de relais de la carte
+9. Retournez sur l'écran d'accueil et testez le bouton Barrière 1. Vous devriez voir un message Barrière 1 OK s'afficher sinon vérifiez votre connexion Wifi. Vous devriez également entendre le relai changer d'état.
+10. Faire le même test pour la barrière 2 et éventuellement les autres si vous en avez. 
 
-### Connexion du relai à la box ou routeur wifi
-TO DO
+## Les deux modes de fonctionnement
+
+### Mode 1 : Fonctionnement en réseau wifi indépendant
+
+Ce mode de fonctionnement permet de connecter le smartphone android directement au réseau de la carte wifi. Ce mode est à privilégier si vous n'avez pas de box ou routeur wifi à proximité. Il est fortement conseillé de commencer par ce mode pour vérifier le bon fonctionnement de la carte avec l'application.
+
+### Mode 2 : Connexion du relai à la box ou routeur wifi
+
+Ce mode de fonctionnement permet à la carte wifi de se connecter directement à votre box ou à votre routeur wifi. Assurez-vous d'avoir fait fonctionner correctement les relais par l'intermédiaire de l'application MilkWay dans le mode 1 décrit dans le paragraphe précédent.
 
 ## Licence et non-responsabilité
 MilkWay est une application open source sous licence [GPL version 3](LICENSE). Cela signifie que vous êtes libre de télécharger, utiliser et modifier le code source de l'application, sous réserve de respecter les termes de la licence.
