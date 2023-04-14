@@ -40,29 +40,35 @@ La documentation chinoise de la carte est disponible sur le site du fabricant [h
 
 ## Première mise en service
 
+Pour la première mise en service, il est conseillé de tester la carte seule sans câblage des relais avec les commandes de barrières.
+
 1. Installer l'application MilkWay sur votre smartphone Android. Celle-ci est disponible sur Google Play. 
 2. Alimentez votre carte wifi en 5V ou 12V selon la version de votre carte en veillant à ne pas inverser la polarité.
 3. Attendre le démarrage de la carte xx secondes
-4. Par défaut lors de la première mise sous tension, la carte devrait être dans le mode 1. Pour cela vérifier que la LED D7 rouge soit allumée. Dans le cas contraire, la LED D5 du mode 2 serait allumée, il faudrait appuyer sur le bouton S1.
-5. Lorsque le mode 1 activé avec sa LED rouge allumée, vous devriez pouvoir vous connecter au réseau wifi de la carte depuis votre smartphone
-6. Vérifier la bonne connexion au réseau wifi
+4. Par défaut lors de la première mise sous tension, la carte devrait être dans le mode 1. Pour cela vérifier que la LED D7 rouge soit allumée. Dans le cas contraire, la LED D5 du mode 2 serait allumée, il faudrait appuyer sur le bouton S1 et attendre XX secondes.
+5. Lorsque le mode 1 est bien activé avec sa LED rouge allumée, vous devriez pouvoir vous connecter au réseau wifi de la carte depuis votre smartphone
+6. Vérifier la bonne connexion de votre smartphone ***au réseau wifi de la carte et non pas au réseau de votre box Internet*** ! 
 7. Ouvrir l'application MilkWay et allez dans le menu de configuration de l'application (icône en forme d'engrenage en haut à droite) pour vérifier les paramètres : 
       - Adresse IP ou DNS : 192.168.104.1
       - Numéro de port : 8080
       - Timeout de connexion : 2 sec
       - Nombre de portes : pas plus que le nombre de relais de la carte
-9. Retournez sur l'écran d'accueil et testez le bouton Barrière 1. Vous devriez voir un message Barrière 1 OK s'afficher sinon vérifiez votre connexion Wifi. Vous devriez également entendre le relai changer d'état.
+9. Retournez sur l'écran d'accueil et testez le bouton Barrière 1. Vous devriez voir un message Barrière 1 OK s'afficher, sinon vérifiez votre connexion Wifi. Vous devriez également entendre le relai changer d'état (et la porte se lever ou se baisser si vous avez effectué le câblage)
 10. Faire le même test pour la barrière 2 et éventuellement les autres si vous en avez. 
 
 ## Les deux modes de fonctionnement
 
 ### Mode 1 : Fonctionnement en réseau wifi indépendant
 
-Ce mode de fonctionnement permet de connecter le smartphone android directement au réseau de la carte wifi. Ce mode est à privilégier si vous n'avez pas de box ou routeur wifi à proximité. Il est fortement conseillé de commencer par ce mode pour vérifier le bon fonctionnement de la carte avec l'application.
+Ce mode de fonctionnement permet de connecter le smartphone android directement au réseau de la carte wifi. Ce mode est à privilégier si vous n'avez pas de box ou routeur wifi à proximité. Il est fortement conseillé de commencer par ce mode pour vérifier le bon fonctionnement de la carte avec l'application avant de tenter la mise en place du mode 2 un peu plus complexe.
 
 ### Mode 2 : Connexion du relai à la box ou routeur wifi
 
 Ce mode de fonctionnement permet à la carte wifi de se connecter directement à votre box ou à votre routeur wifi. Assurez-vous d'avoir fait fonctionner correctement les relais par l'intermédiaire de l'application MilkWay dans le mode 1 décrit dans le paragraphe précédent.
+
+...
+
+Le programme pré-installé dand la carte ne permet pas de spécifier une adresse IP fixe. Ce n'est pas un problème, après l'attribution de l'adresse IP, rendez vous sur la page de configuration de votre box internet ou routeur Wifi pour attribuer une adresse IP fixe à votre carte.
 
 ## Licence et non-responsabilité
 MilkWay est une application open source sous licence [GPL version 3](LICENSE). Cela signifie que vous êtes libre de télécharger, utiliser et modifier le code source de l'application, sous réserve de respecter les termes de la licence.
