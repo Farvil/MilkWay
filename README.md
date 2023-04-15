@@ -77,4 +77,4 @@ Veuillez noter que l'application est fournie en l'état, sans garantie d'aucune 
 
 ## Contribuer au projet
 
-Vous avez trouvé un bug dans l'application, vous avez pensé à une évolution ou vous souhaitez participer au codage de l'application ? Alors rendez vous sur la page [CONTRIBUTING.md](CONTRIBUTING.md).
+Vous avez trouvé un bug dans l'application, vous avez pensé à une évolution ou vous souhaitez participer au codage de l'application ? Alors rendez vous sur la page [CONTRIBUTING](CONTRIBUTING.md).
