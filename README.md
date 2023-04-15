@@ -75,7 +75,6 @@ MilkWay est une application open source sous licence [GPL version 3](LICENSE). C
 
 Veuillez noter que l'application est fournie en l'état, sans garantie d'aucune sorte. Je ne suis en aucun cas responsable des dommages éventuels sur le matériel de l'utilisateur.
 
-## Soumettre un bug ou contacter l'auteur 
+## Contribuer au projet
 
-Si vous souhaitez soumettre un bug, vous pouvez créer une "Issue" dans les onglets en haut de page de GitHub.
-Vous pouvez contacter l'auteur à l'adresse [milkway.application@gmail.com](mailto:milkway.application@gmail.com).
+Vous avez trouvé un bug dans l'application, vous avez pensé à une évolution ou vous souhaitez participer au codage de l'application ? Alors rendez vous sur la page [CONTRIBUTING.md](CONTRIBUTING.md).
