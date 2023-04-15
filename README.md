@@ -74,3 +74,8 @@ Le programme pré-installé dand la carte ne permet pas de spécifier une adress
 MilkWay est une application open source sous licence [GPL version 3](LICENSE). Cela signifie que vous êtes libre de télécharger, utiliser et modifier le code source de l'application, sous réserve de respecter les termes de la licence.
 
 Veuillez noter que l'application est fournie en l'état, sans garantie d'aucune sorte. Je ne suis en aucun cas responsable des dommages éventuels sur le matériel de l'utilisateur.
+
+## Soumettre un bug ou contacter l'auteur 
+
+Si vous souhaitez soumettre un bug, vous pouvez créer une "Issue" dans les onglets en haut de page de GitHub.
+Vous pouvez contacter l'auteur à l'adresse [milkway.application@gmail.com](mailto:milkway.application@gmail.com).
