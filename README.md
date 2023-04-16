@@ -44,9 +44,8 @@ Pour la première mise en service, il est conseillé de tester la carte seule sa
 
 1. Installer l'application MilkWay sur votre smartphone Android. Celle-ci est disponible sur Google Play. 
 2. Alimentez votre carte wifi en 5V ou 12V selon la version de votre carte en veillant à ne pas inverser la polarité.
-3. Attendre le démarrage de la carte xx secondes
-4. Par défaut lors de la première mise sous tension, la carte devrait être dans le mode 1. Pour cela vérifier que la LED D7 rouge soit allumée. Dans le cas contraire, la LED D5 du mode 2 serait allumée, il faudrait appuyer sur le bouton S1 et attendre XX secondes.
-5. Lorsque le mode 1 est bien activé avec sa LED rouge allumée, vous devriez pouvoir vous connecter au réseau wifi de la carte depuis votre smartphone
+3. Vérifier après environ 10 secondes que la LED rouge D7 soit allumée et que la led verte D6 clignote à raison de 2 fois par seconde. Dans le cas ou la LED bleue D5 serait allumée, cela signifie que vous êtes dans le mode 2. Si tel était le le cas, appuyez sur le bouton S1 pour changer de mode et recommencez cette étape de vérification des LED.
+5. Vous devriez pouvoir vous connecter au réseau wifi de la carte depuis votre smartphone. ***Attention : vous allez recevoir une notification "Impossible de se connecter à Internet via le réseau wifi". Cliquez sur cette notification et cliquez sur "Ne plus me demander pour ce réseau" et cliquez sur "Oui". Sinon, cela risquera de ne pas fonctionner correctement*** 
 6. Vérifier la bonne connexion de votre smartphone ***au réseau wifi de la carte et non pas au réseau de votre box Internet*** ! 
 7. Ouvrir l'application MilkWay et allez dans le menu de configuration de l'application (icône en forme d'engrenage en haut à droite) pour vérifier les paramètres : 
       - Adresse IP ou DNS : 192.168.104.1
