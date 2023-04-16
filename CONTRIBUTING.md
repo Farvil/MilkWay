@@ -14,11 +14,16 @@ Si vous détectez une anomalie sur l'application, vous pouvez m'en informer en c
 
 Si vous souhaitez proposer une amélioration ou une nouvelle fonctionnalité pour l'application, vous pouvez créer une nouvelle ["issue"](https://github.com/Farvil/MilkWay/issues) également.
 
-## Contribuer au code source
+## Contribuer au code source ou à la correction de problèmes
 
-Si vous souhaitez contribuer du code à l'application, merci de discuter de votre proposition dans une issue ou dans les discussions du projet. 
-Assurez-vous de suivre les conventions de codage existantes et de tester votre code avant de soumettre une pull request. 
-Je me réserve le droit de refuser des pull requests qui ne répondent pas aux critères du projet.
+Si vous souhaitez contribuer à la modification du code source de l'application, merci de discuter de votre proposition dans une issue ou dans les discussions du projet. L'outil utilisé est Android Studio. Assurez-vous de suivre les conventions de codage existantes et de tester votre code avant de soumettre une pull request. 
+
+La procédure à suivre est : 
+- Informer dans l'issue que vous souhaitez aider à sa résolution et attendre une validation pour éviter le travail en double
+- Forker le repository et clonez le localement
+- Créez une branche pour vos modifications avec le numéro d'issue
+- Testez vos modifications
+- Faire un pull request de vos modifications
 
 ## Contact
 
