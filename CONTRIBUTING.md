@@ -20,10 +20,10 @@ Si vous souhaitez contribuer à la modification du code source de l'application,
 
 La procédure à suivre est : 
 - Informer dans l'issue que vous souhaitez aider à sa résolution et attendre une validation pour éviter le travail en double
-- Forker le repository et clonez le localement
-- Créez une branche pour vos modifications avec le numéro d'issue
+- Forker le repository et le cloner le localement
+- Créer une branche issue du main pour vos modifications avec le numéro d'issue
 - Testez vos modifications
-- Faire un pull request de vos modifications
+- Faire une pull request de vos modifications
 
 ## Contact
 
