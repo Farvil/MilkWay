@@ -1,76 +1,61 @@
+/*
+ * Copyright (c) 2023 Vincent VILLOT
+ *
+ * Ce fichier fait partie de l'application MilkWay.
+ *
+ * MilkWay est un logiciel libre : vous pouvez le redistribuer
+ * et/ou le modifier selon les termes de la Licence Publique Générale GNU
+ * telle que publiée par la Free Software Foundation, version 3 de la licence
+ * ou toute version ultérieure.
+ *
+ * MilkWay est distribué dans l'espoir qu'il sera utile,
+ * mais SANS AUCUNE GARANTIE ; sans même la garantie implicite de QUALITÉ
+ * MARCHANDE ou D'ADÉQUATION À UN USAGE PARTICULIER. Consultez la Licence
+ * Publique Générale GNU pour plus de détails.
+ *
+ * Vous devez avoir reçu une copie de la Licence Publique Générale GNU
+ * en même temps que ce programme. Si ce n'est pas le cas, consultez
+ * <https://www.gnu.org/licenses/>.
+ *
+ * URL des sources et de la documentation du projet MilkWay : https://github.com/Farvil/MilkWay
+ */
+
+
 package fr.villot.milkway;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
-
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.preference.PreferenceFragmentCompat;
 
-public class SettingsActivity extends PreferenceActivity
+public class SettingsActivity extends AppCompatActivity
 {
     @Override
     protected void onCreate(final Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction().replace(android.R.id.content, new MyPreferenceFragment()).commit();
+        setContentView(R.layout.activity_settings);
+
+        // Toolbar
+        Toolbar toolbar=findViewById(R.id.apropos_toolbar);
+        setSupportActionBar(toolbar);
+        // Bouton de retour
+        ActionBar actionBar=getSupportActionBar();
+        if (actionBar != null)
+            actionBar.setDisplayHomeAsUpEnabled(true);
+
+        // Remplacement du fragment
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.id_frame_layout_settings, new MySettingsFragment())
+                .commit();
     }
 
-    public static class MyPreferenceFragment extends PreferenceFragment
-    {
-
-        public static final String PREF_IP_ADDRESS = "ipAdress";
-        public static final String PREF_PORT = "portNumber";
-        public static final String PREF_TIMEOUT = "timeout";
-        public static final String PREF_NB_RELAY = "nbRelay";
-
-        private SharedPreferences.OnSharedPreferenceChangeListener preferenceChangeListener;
-
+    public static class MySettingsFragment extends PreferenceFragmentCompat {
         @Override
-        public void onCreate(final Bundle savedInstanceState)
-        {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.preference);
-
-            final SharedPreferences getPrefs = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
-            preferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
-                @Override
-                public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-
-//                if (key.equals(PREF_IP_ADRESS)) {
-                    Preference pref = findPreference(key);
-                    pref.setSummary(sharedPreferences.getString(key, ""));
-//                }
-                }
-            };
-        }
-
-        @Override
-        public void onResume() {
-            super.onResume();
-
-            getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(preferenceChangeListener);
-
-            Preference prefIpAdress = findPreference(PREF_IP_ADDRESS);
-            prefIpAdress.setSummary(getPreferenceScreen().getSharedPreferences().getString(PREF_IP_ADDRESS, ""));
-
-            Preference prefPort = findPreference(PREF_PORT);
-            prefPort.setSummary(getPreferenceScreen().getSharedPreferences().getString(PREF_PORT, ""));
-
-            Preference prefTimeout = findPreference(PREF_TIMEOUT);
-            prefTimeout.setSummary(getPreferenceScreen().getSharedPreferences().getString(PREF_TIMEOUT, ""));
-
-            Preference prefNbRelay = findPreference(PREF_NB_RELAY);
-            prefNbRelay.setSummary(getPreferenceScreen().getSharedPreferences().getString(PREF_NB_RELAY, ""));
-        }
-
-        @Override
-        public void onPause() {
-            getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(preferenceChangeListener);
-
-            super.onPause();
+        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+            setPreferencesFromResource(R.xml.preferences, rootKey);
         }
 
 

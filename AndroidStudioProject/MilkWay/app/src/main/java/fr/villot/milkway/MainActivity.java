@@ -1,3 +1,26 @@
+/*
+ * Copyright (c) 2023 Vincent VILLOT
+ *
+ * Ce fichier fait partie de l'application MilkWay.
+ *
+ * MilkWay est un logiciel libre : vous pouvez le redistribuer
+ * et/ou le modifier selon les termes de la Licence Publique Générale GNU
+ * telle que publiée par la Free Software Foundation, version 3 de la licence
+ * ou toute version ultérieure.
+ *
+ * MilkWay est distribué dans l'espoir qu'il sera utile,
+ * mais SANS AUCUNE GARANTIE ; sans même la garantie implicite de QUALITÉ
+ * MARCHANDE ou D'ADÉQUATION À UN USAGE PARTICULIER. Consultez la Licence
+ * Publique Générale GNU pour plus de détails.
+ *
+ * Vous devez avoir reçu une copie de la Licence Publique Générale GNU
+ * en même temps que ce programme. Si ce n'est pas le cas, consultez
+ * <https://www.gnu.org/licenses/>.
+ *
+ * URL des sources et de la documentation du projet MilkWay : https://github.com/Farvil/MilkWay
+ */
+
+
 package fr.villot.milkway;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,16 +49,21 @@ import java.lang.ref.WeakReference;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
+//// TO DO :
+// Vérifier les donnees rentrées par l'utilisateur dans les preferences pour eviter plantage application
+// Gerer les conventions de nommage et langue
+
 public class MainActivity extends AppCompatActivity implements View.OnTouchListener {
 
     // constantes
-    private static final int DEFAULT_SERVERPORT = 8080;
-    private static final String DEFAULT_SERVER_IP = "192.168.1.103";
-    private static final int DEFAULT_TIMEOUT = 3;
-    private static final int DEFAULT_NB_RELAY = 2;
+    private static final int DEFAULT_SERVERPORT = App.getRes().getInteger(R.integer.default_port_number);
+    private static final String DEFAULT_SERVER_IP = App.getRes().getString(R.string.default_server_ip);
+    private static final int DEFAULT_TIMEOUT = App.getRes().getInteger(R.integer.default_timeout);
+    private static final int DEFAULT_NB_RELAY = App.getRes().getInteger(R.integer.default_nb_relay);
     static final int MAX_BUTTON_NUMBER = 4;
 
     // Messages de commande des relais
+    // TO DO: Externaliser les messages des relais dans res/raw en utilisant Resources.openRawResource
     private static final byte[] B1_ON = new byte[] { (byte) 0xA0, (byte) 0x01, (byte) 0x01, (byte) 0xA2};
     private static final byte[] B1_OFF = new byte[] { (byte) 0xA0, (byte) 0x01, (byte) 0x00, (byte) 0xA1};
     private static final byte[] B2_ON = new byte[] { (byte) 0xA0, (byte) 0x02, (byte) 0x01, (byte) 0xA3};
@@ -52,13 +80,12 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private static int sServerPort = DEFAULT_SERVERPORT;
     private static String sServerIp = DEFAULT_SERVER_IP;
     private static int sTimeout = DEFAULT_TIMEOUT;
-    private static int sNbRelay = DEFAULT_NB_RELAY;
 
     // Preferences
-    public static final String PREF_IP_ADDRESS = "ipAdress";
-    public static final String PREF_PORT = "portNumber";
+    public static final String PREF_IP_ADDRESS = "ip_address";
+    public static final String PREF_PORT = "port_number";
     public static final String PREF_TIMEOUT = "timeout";
-    public static final String PREF_NB_RELAY = "nbRelay";
+    public static final String PREF_NB_RELAY = "nb_relay";
 
     // Log
 //    private static final String LOG_TAG = MainActivity.class.getSimpleName();
@@ -97,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         sServerIp = pref.getString(PREF_IP_ADDRESS, DEFAULT_SERVER_IP);
         sServerPort = Integer.parseInt(pref.getString(PREF_PORT, String.valueOf(DEFAULT_SERVERPORT)));
         sTimeout = Integer.parseInt(pref.getString(PREF_TIMEOUT, String.valueOf(DEFAULT_TIMEOUT)));
-        sNbRelay = Integer.parseInt(pref.getString(PREF_NB_RELAY, String.valueOf(DEFAULT_NB_RELAY)));
+        int sNbRelay = Integer.parseInt(pref.getString(PREF_NB_RELAY, String.valueOf(DEFAULT_NB_RELAY)));
 
         // Visibilité des boutons.
         for (int i = 0 ; i < mButtonList.length ; i++) {
@@ -120,20 +147,19 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                // Bouton de configuration
-                Intent settingsActivity = new Intent(this, SettingsActivity.class);
-                startActivity(settingsActivity);
-                return true;
-            case R.id.action_apropos:
-                // Bouton A propos
-                Intent aproposActivity = new Intent(this,AproposActivity.class);
-                startActivity(aproposActivity);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-
+        if (item.getItemId() == R.id.action_settings) {
+            // Bouton de configuration
+            Intent settingsActivity = new Intent(this, SettingsActivity.class);
+            startActivity(settingsActivity);
+            return true;
+        }
+        else if (item.getItemId() == R.id.action_apropos) {
+            // Bouton A propos
+            Intent aproposActivity = new Intent(this, AproposActivity.class);
+            startActivity(aproposActivity);
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
     }
 
@@ -150,12 +176,14 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
             if (isNetworkAvailable()) {
                 RelayTask relayTask = new RelayTask(MainActivity.this);
-                relayTask.execute(relayNumber);
+                    relayTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, relayNumber);
+
             } else {
                 Toast.makeText(getApplicationContext(), R.string.reseau_indisponible, Toast.LENGTH_SHORT).show();
             }
 
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
+            v.performClick();
             v.getBackground().clearColorFilter();
             v.invalidate();
         }
@@ -176,6 +204,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         private WeakReference<MainActivity> mActivity = null;
 
         public RelayTask (MainActivity pActivity) {
+            super();
             link(pActivity);
         }
 
@@ -191,7 +220,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         @Override
         protected String doInBackground (Integer... relayNumber) {
 
-            InetSocketAddress serverSocketAddr = null;
+            InetSocketAddress serverSocketAddr;
             Socket socket = null;
             OutputStream out = null;
             String result = App.getRes().getString(R.string.erreur_inconnue);
@@ -283,7 +312,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
         // Cree une reference faible de l'activité dans le thread pour eviter les fuites mémoires
         public void link (MainActivity pActivity) {
-            mActivity = new WeakReference<MainActivity>(pActivity);
+            mActivity = new WeakReference<>(pActivity);
         }
 
     }

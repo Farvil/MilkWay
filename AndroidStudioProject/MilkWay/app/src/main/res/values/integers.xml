@@ -22,5 +22,7 @@
     */
 -->
 <resources>
-    <color name="ic_launcher_background">#9B0000</color>
+    <integer name="default_port_number">8080</integer>
+    <integer name="default_timeout">2</integer>
+    <integer name="default_nb_relay">2</integer>
 </resources>
