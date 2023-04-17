@@ -33,18 +33,22 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class AproposActivity extends AppCompatActivity {
+public class AproposActivity extends BaseActivity {
+
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_apropos;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_apropos);
 
-        Toolbar toolbar=findViewById(R.id.apropos_toolbar);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar=getSupportActionBar();
-        if (actionBar != null)
-            actionBar.setDisplayHomeAsUpEnabled(true);
+//        Toolbar toolbar=findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        ActionBar actionBar=getSupportActionBar();
+//        if (actionBar != null)
+//            actionBar.setDisplayHomeAsUpEnabled(true);
 
         Button b_browser = (Button)findViewById(R.id.buttonGitHub);
         b_browser.setOnClickListener(v -> {

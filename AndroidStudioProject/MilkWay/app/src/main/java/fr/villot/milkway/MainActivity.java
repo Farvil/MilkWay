@@ -53,7 +53,7 @@ import java.net.Socket;
 // Vérifier les donnees rentrées par l'utilisateur dans les preferences pour eviter plantage application
 // Gerer les conventions de nommage et langue
 
-public class MainActivity extends AppCompatActivity implements View.OnTouchListener {
+public class MainActivity extends BaseActivity implements View.OnTouchListener {
 
     // constantes
     private static final int DEFAULT_SERVERPORT = App.getRes().getInteger(R.integer.default_port_number);
@@ -87,20 +87,18 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     public static final String PREF_TIMEOUT = "timeout";
     public static final String PREF_NB_RELAY = "nb_relay";
 
-    // Log
-//    private static final String LOG_TAG = MainActivity.class.getSimpleName();
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_main;
+    }
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-//        Log.d(LOG_TAG, "onCreate");
-
-        // config Toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        // Desactivation fleche retour pour l'activité principale
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         // Recuperation des boutons dans la vue
         mButtonList[0] = (Button) findViewById(R.id.bouton1);

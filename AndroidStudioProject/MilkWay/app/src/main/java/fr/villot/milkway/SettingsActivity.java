@@ -29,21 +29,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.preference.PreferenceFragmentCompat;
 
-public class SettingsActivity extends AppCompatActivity
+public class SettingsActivity extends BaseActivity
 {
+
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_settings;
+    }
+
     @Override
     protected void onCreate(final Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
-
-        // Toolbar
-        Toolbar toolbar=findViewById(R.id.apropos_toolbar);
-        setSupportActionBar(toolbar);
-        // Bouton de retour
-        ActionBar actionBar=getSupportActionBar();
-        if (actionBar != null)
-            actionBar.setDisplayHomeAsUpEnabled(true);
 
         // Remplacement du fragment
         getSupportFragmentManager()
