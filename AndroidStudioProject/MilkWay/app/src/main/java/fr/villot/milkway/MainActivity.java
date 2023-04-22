@@ -23,9 +23,6 @@
 
 package fr.villot.milkway;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -49,9 +46,8 @@ import java.lang.ref.WeakReference;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
-//// TO DO :
-// Vérifier les donnees rentrées par l'utilisateur dans les preferences pour eviter plantage application
-// Gerer les conventions de nommage et langue
+// TODO : Vérifier les donnees rentrées par l'utilisateur dans les preferences pour eviter plantage application
+// TODO : Remplacer l'async task dépréciée par un thread.
 
 public class MainActivity extends BaseActivity implements View.OnTouchListener {
 
@@ -63,7 +59,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
     static final int MAX_BUTTON_NUMBER = 4;
 
     // Messages de commande des relais
-    // TO DO: Externaliser les messages des relais dans res/raw en utilisant Resources.openRawResource
+    // TODO : Externaliser les messages des relais dans res/raw en utilisant Resources.openRawResource
     private static final byte[] B1_ON = new byte[] { (byte) 0xA0, (byte) 0x01, (byte) 0x01, (byte) 0xA2};
     private static final byte[] B1_OFF = new byte[] { (byte) 0xA0, (byte) 0x01, (byte) 0x00, (byte) 0xA1};
     private static final byte[] B2_ON = new byte[] { (byte) 0xA0, (byte) 0x02, (byte) 0x01, (byte) 0xA3};
@@ -97,7 +93,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Desactivation fleche retour pour l'activité principale
+        // Suppression bouton retour de la Toolbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         // Recuperation des boutons dans la vue
@@ -177,7 +173,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
                     relayTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, relayNumber);
 
             } else {
-                Toast.makeText(getApplicationContext(), R.string.reseau_indisponible, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.msg_err_unavailable_network, Toast.LENGTH_SHORT).show();
             }
 
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
@@ -221,7 +217,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
             InetSocketAddress serverSocketAddr;
             Socket socket = null;
             OutputStream out = null;
-            String result = App.getRes().getString(R.string.erreur_inconnue);
+            String result = App.getRes().getString(R.string.msg_err_unknown_error);
             byte[] relayOn = null;
             byte[] relayOff = null;
 
@@ -229,22 +225,22 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
             if (relayNumber[0] == 1) {
                 relayOn = B1_ON;
                 relayOff = B1_OFF;
-                result=App.getRes().getString(R.string.relai1_ok);
+                result=App.getRes().getString(R.string.msg_info_relay1_ok);
             }
             else if (relayNumber[0] == 2) {
                 relayOn = B2_ON;
                 relayOff = B2_OFF;
-                result=App.getRes().getString(R.string.relai2_ok);
+                result=App.getRes().getString(R.string.msg_info_relay2_ok);
             }
             else if (relayNumber[0] == 3) {
                 relayOn = B3_ON;
                 relayOff = B3_OFF;
-                result=App.getRes().getString(R.string.relai3_ok);
+                result=App.getRes().getString(R.string.msg_info_relay3_ok);
             }
             else if (relayNumber[0] == 4) {
                 relayOn = B4_ON;
                 relayOff = B4_OFF;
-                result=App.getRes().getString(R.string.relai4_ok);
+                result=App.getRes().getString(R.string.msg_info_relay4_ok);
             }
 
             // Connexion du socket
@@ -254,7 +250,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
                 socket.connect(serverSocketAddr, sTimeout * 1000);
             } catch (Exception ex) {
                 ex.printStackTrace();
-                result = App.getRes().getString(R.string.erreur_connexion_wifi, sServerIp, sServerPort);
+                result = App.getRes().getString(R.string.msg_err_wifi_connection, sServerIp, sServerPort);
                 try {
                     if (socket != null) {
                         socket.close();
@@ -271,7 +267,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
                     out = socket.getOutputStream();
                 } catch (IOException ex) {
                     ex.printStackTrace();
-                    result = App.getRes().getString(R.string.erreur_flux_sortant);
+                    result = App.getRes().getString(R.string.msg_err_output_stream);
                 }
             }
 
@@ -287,10 +283,10 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
                     Thread.sleep(200);
                 } catch (IOException e) {
                     e.printStackTrace();
-                    result = App.getRes().getString(R.string.erreur_commande_relai);
+                    result = App.getRes().getString(R.string.msg_err_relay_command);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                    result = App.getRes().getString(R.string.erreur_pause_on_off);
+                    result = App.getRes().getString(R.string.msg_err_pause_on_off);
                 }
 
             }
@@ -301,7 +297,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
                     socket.close();
                 } catch (IOException e) {
                     e.printStackTrace();
-                    result = App.getRes().getString(R.string.erreur_fermeture_socket);
+                    result = App.getRes().getString(R.string.msg_err_socket_close);
                 }
             }
 

@@ -40,21 +40,13 @@ public class SettingsActivity extends BaseActivity
     @Override
     protected void onCreate(final Bundle savedInstanceState)
     {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState); // setContentView fait dans BaseActivity
 
         // Remplacement du fragment
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.id_frame_layout_settings, new MySettingsFragment())
+                .replace(R.id.id_frame_layout_settings, new PreferencesFragment())
                 .commit();
     }
 
-    public static class MySettingsFragment extends PreferenceFragmentCompat {
-        @Override
-        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-            setPreferencesFromResource(R.xml.preferences, rootKey);
-        }
-
-
-    }
 }

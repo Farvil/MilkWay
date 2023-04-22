@@ -31,9 +31,10 @@
             android:key="ip_address"
             android:selectAllOnFocus="true"
             android:singleLine="true"
+            android:inputType="textNoSuggestions"
             android:title="Adresse IP ou DNS"
             app:persistent="true"
-            app:useSimpleSummaryProvider="true" />
+            app:useSimpleSummaryProvider="true"/>
         <EditTextPreference
             android:defaultValue="@integer/default_port_number"
             android:key="port_number"

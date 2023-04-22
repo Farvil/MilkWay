@@ -42,24 +42,23 @@ public class AproposActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState); // setContentView fait dans BaseActivity
 
-//        Toolbar toolbar=findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        ActionBar actionBar=getSupportActionBar();
-//        if (actionBar != null)
-//            actionBar.setDisplayHomeAsUpEnabled(true);
-
-        Button b_browser = (Button)findViewById(R.id.buttonGitHub);
-        b_browser.setOnClickListener(v -> {
-            Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse( getString(R.string.url_github) ) );
-            startActivity(intent);
-        });
-
-        // Mise à jour de la version
+        // Mise à jour de la version de MilkWay
         TextView versionNameTextView = findViewById(R.id.version_name);
         versionNameTextView.setText(getString(R.string.version, BuildConfig.VERSION_NAME));
 
+        // Action sur click du bouton
+        Button githubButton = (Button)findViewById(R.id.buttonGitHub);
+        githubButton.setOnClickListener(v -> onGitHubButtonClicked());
+    }
 
+    /**
+     * Ouvre l'URL du projet MilkWay sur GitHub dans le navigateur.
+     */
+    private void onGitHubButtonClicked() {
+        String url = getString(R.string.url_github);
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(intent);
     }
 }
