@@ -47,7 +47,7 @@ Pour la première mise en service, il est conseillé de tester la carte seule sa
 3. Vérifier après environ 10 secondes que la LED rouge D7 soit allumée et que la led verte D6 clignote à raison de 2 fois par seconde. Dans le cas ou la LED bleue D5 serait allumée, cela signifie que vous êtes dans le mode 2. Si tel était le le cas, appuyez sur le bouton S1 pour changer de mode et recommencez cette étape de vérification des LED.
 5. Vous devriez pouvoir vous connecter au réseau wifi de la carte depuis votre smartphone. ***Attention : vous allez peut-être recevoir une notification "Impossible de se connecter à Internet via le réseau wifi". Cliquez sur cette notification puis "Ne plus me demander pour ce réseau" et cliquez sur "Oui". Sinon, cela risquera de ne pas fonctionner correctement*** 
 6. Vérifier la bonne connexion de votre smartphone ***au réseau wifi de la carte et non pas au réseau de votre box Internet*** ! 
-7. Ouvrir l'application MilkWay et allez dans le menu de configuration de l'application (icône en forme d'engrenage en haut à droite) pour vérifier les paramètres : 
+7. Ouvrir l'application MilkWay et aller dans le menu de configuration de l'application (icône en forme d'engrenage en haut à droite) pour vérifier les paramètres : 
       - Adresse IP ou DNS : 192.168.104.1
       - Numéro de port : 8080
       - Timeout de connexion : 2 sec
@@ -65,14 +65,31 @@ La carte est en mode 1 lorsque la LED rouge D7 est allumée. Appuyer sur le bout
 
 ### Mode 2 : Connexion du relai et du smartphone à la box ou au routeur wifi
 
-Ce mode de fonctionnement permet à la carte wifi de se connecter directement à votre box ou à votre routeur wifi. Si vous avez un réseau wifi déjà en place dans votre bâtiment d'élevage, ce mode est à privilégier.
+Ce mode de fonctionnement permet à la carte wifi de se connecter directement à votre box ou à votre routeur wifi. Si vous avez un réseau wifi déjà en place dans votre bâtiment d'élevage, ce mode est à privilégier. Pour paramétrer la carte de relais dans ce mode, il va falloir utiliser une application implémentant le protocole ESPTouch.
+
+> Le protocole ESPTouch (ou Smart Config) est un protocole de configuration sans fil développé par Expressif Systems pour faciliter la configuration de périphériques IoT tels que les modules ESP8266 ou ESP32. Il permet de configurer les paramètres réseau (SSID et mot de passe) d'un périphérique IoT en utilisant une application mobile dédiée, sans avoir à saisir manuellement les informations de connexion. Le protocole ESPTouch est disponible pour les plateformes Android et iOS, ainsi que pour les systèmes d'exploitation Windows et Linux. Il est largement utilisé dans les projets d'IoT pour simplifier la configuration des périphériques et améliorer l'expérience utilisateur.
+
+L'application officielle peut être téléchargée sur le site de Expressif à l'url [https://www.espressif.com/en/products/software/esp-touch/resources](https://www.espressif.com/en/products/software/esp-touch/resources) mais vous pouvez également l'installer depuis le Play Store [https://play.google.com/store/apps/details?id=com.dparts.esptouch](https://play.google.com/store/apps/details?id=com.dparts.esptouch) 
+
+Voici les étapes de configuration : 
 
 1. Prérequis : Etre capable de faire fonctionner les relais dans le mode 1
-2. Passer en mode 2 en appuyant sur le bouton S2 (ou S1 selon le modèle ?) et attendre que la LED bleue D5 soit allumée
+2. Connecter son smartphone au réseau wifi de votre box ou routeur wifi.
+3. Lancer l'application Esptouch et cliquer sur l'item Esptouch (ne pas utiliser la v2)
+4. Vérifier les SSID et BSSID et saisir le mot de passe de votre connexion wifi. Laisser l'option Broadcast et Device Count = 1.
+5. Passer la carte de relais en mode 2 en appuyant sur le bouton S2 (ou S1 selon le modèle ?) et attendre que la LED bleue D5 soit allumée
+6. Cliquer sur le bouton Start et attendre la fin du processus de configuration.
+7. Aller sur la page de configuration de votre box pour récupérer l'adresse IP de la carte de relais et paramétrer ce matériel avec une adresse IP fixe de votre choix. Débranchez la carte puis rebranchez.
+8. Vérifier sur la page de configuration de votre box que l'adresse IP (pour l'exemple nous choisissons 192.168.1.100) a bien été attribuée à la carte de relais.
+9. Ouvrir l'application MilkWay et aller dans le menu de configuration de l'application (icône en forme d'engrenage en haut à droite) pour modifier les paramètres : 
+      - Adresse IP ou DNS : saisir l'adresse que vous avez choisi (dans notre exemple : 192.168.1.100)
+      - Numéro de port : 8080
+      - Timeout de connexion : 2 sec
+      - Nombre de portes : pas plus que le nombre de relais de la carte
+9. Retournez sur l'écran d'accueil et testez le bouton Barrière 1. Vous devriez voir un message Barrière 1 OK s'afficher, sinon vérifiez votre connexion Wifi. Vous devriez également entendre le relai changer d'état (ON puis OFF au bout de 300 ms)
+10. Faire le même test pour la barrière 2 et éventuellement les autres si vous en avez. 
 
-...
-
-Le programme pré-installé dand la carte ne permet pas de spécifier une adresse IP fixe. Ce n'est pas un problème, après l'attribution de l'adresse IP, rendez vous sur la page de configuration de votre box internet ou routeur Wifi pour attribuer une adresse IP fixe à votre carte.
+Si cela fonctionne correctement, vous n'aurez plus besoin du programme Esptouch et vous pouvez le désinstaller. 
 
 ## Licence et non-responsabilité
 MilkWay est une application open source sous licence [GPL version 3](LICENSE). Cela signifie que vous êtes libre de télécharger, utiliser et modifier le code source de l'application, sous réserve de respecter les termes de la licence.
