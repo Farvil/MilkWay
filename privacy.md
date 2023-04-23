@@ -4,9 +4,8 @@ MilkWay ne collecte aucune information personnelle identifiable ou non identifia
 
 MilkWay utilise les autorisations suivantes pour les fonctionnalités de l'application :
 
-    Accès Internet (android.permission.INTERNET) : Pour commander si besoin les relais à distance
-
-    Accès à l'état du réseau et du wifi (android.permission.ACCESS_NETWORK_STATE et android.permission.ACCESS_WIFI_STATE) : Vérifier que le réseau est disponible avant de se connecter au relai wifi
+- Accès Internet (android.permission.INTERNET) : Pour commander si besoin les relais à distance.
+- Accès à l'état du réseau et du wifi (android.permission.ACCESS_NETWORK_STATE et android.permission.ACCESS_WIFI_STATE) : Vérifier que le réseau est disponible avant de se connecter au relai wifi.
 
 MilkWay ne partage aucune information avec des tiers, ni ne vend ou ne loue aucune information à des tiers.
 
