@@ -65,38 +65,37 @@ La carte est en mode 1 lorsque la LED rouge D7 est allumée. Appuyer sur le bout
 
 ### Mode 2 : Connexion du relai et du smartphone à la box ou au routeur wifi
 
-Ce mode de fonctionnement permet à la carte wifi de se connecter directement à votre box ou à votre routeur wifi. Si vous avez un réseau wifi déjà en place dans votre bâtiment d'élevage, ce mode est à privilégier. Pour paramétrer la carte de relais dans ce mode, il va falloir utiliser une application implémentant le protocole ESPTouch.
+Ce mode de fonctionnement permet à la carte wifi de se connecter directement à votre box ou à votre routeur wifi. Si vous avez un réseau wifi déjà en place dans votre bâtiment d'élevage, ce mode est à privilégier. Pour paramétrer la carte de relais dans ce mode, vous devrez utiliser une application implémentant le protocole ESPTouch.
 
 > Le protocole ESPTouch (ou Smart Config) est un protocole de configuration sans fil développé par Expressif Systems pour faciliter la configuration de périphériques IoT tels que les modules ESP8266 ou ESP32. Il permet de configurer les paramètres réseau (SSID et mot de passe) d'un périphérique IoT en utilisant une application mobile dédiée, sans avoir à saisir manuellement les informations de connexion. Le protocole ESPTouch est disponible pour les plateformes Android et iOS, ainsi que pour les systèmes d'exploitation Windows et Linux. Il est largement utilisé dans les projets d'IoT pour simplifier la configuration des périphériques et améliorer l'expérience utilisateur.
 
-L'application officielle peut être téléchargée sur le site de Expressif à l'url [https://www.espressif.com/en/products/software/esp-touch/resources](https://www.espressif.com/en/products/software/esp-touch/resources) mais vous pouvez également l'installer depuis le Play Store [https://play.google.com/store/apps/details?id=com.dparts.esptouch](https://play.google.com/store/apps/details?id=com.dparts.esptouch) 
+L'application officielle est référencée sur le site [https://www.espressif.com/en/products/software/esp-touch/resources](https://www.espressif.com/en/products/software/esp-touch/resources). Il faut télécharger le fichier esptouch-v2.0.0.apk (ou supérieure) puis l'exécuter pour l'installer. Vous pouvez également installer l'application depuis le Play Store [https://play.google.com/store/apps/details?id=com.dparts.esptouch](https://play.google.com/store/apps/details?id=com.dparts.esptouch).
 
 Voici les étapes de configuration : 
 
-1. Prérequis : Etre capable de faire fonctionner les relais dans le mode 1
-2. Connecter son smartphone au réseau wifi de votre box ou routeur wifi.
-3. Lancer l'application Esptouch et cliquer sur l'item Esptouch (ne pas utiliser la v2)
-4. Vérifier les SSID et BSSID et saisir le mot de passe de votre connexion wifi. Laisser l'option Broadcast et Device Count = 1.
+1. **Prérequis** : La carte de relais fonctionne correctement avec l'application MilkWay en mode 1.
+2. Connecter son smartphone au réseau wifi de votre box ou de votre routeur wifi.
+3. Lancer l'application *Esptouch* et cliquer sur l'item *Esptouch* (ne pas cliquer *EspTouch V2* non compatible avec la carte)
+4. Vérifier les SSID et BSSID et saisir le mot de passe de votre connexion wifi. Laisser l'option *Broadcast* ainsi que *Device Count = 1*.
 5. Passer la carte de relais en mode 2 en appuyant sur le bouton S2 (ou S1 selon le modèle ?) et attendre que la LED bleue D5 soit allumée
-6. Cliquer sur le bouton Start et attendre la fin du processus de configuration.
-7. Aller sur la page de configuration de votre box pour récupérer l'adresse IP de la carte de relais et paramétrer ce matériel avec une adresse IP fixe de votre choix. Débranchez la carte puis rebranchez.
+6. Cliquer sur le bouton Start de l'application EspTouch et attendre la fin du processus de configuration.
+7. Aller sur la page de configuration de votre box et paramétrer une adresse IP statique pour la carte de relai. Débranchez la carte puis rebranchez en cas de changement d'adresse IP.
 8. Vérifier sur la page de configuration de votre box que l'adresse IP (pour l'exemple nous choisissons 192.168.1.100) a bien été attribuée à la carte de relais.
 9. Ouvrir l'application MilkWay et aller dans le menu de configuration de l'application (icône en forme d'engrenage en haut à droite) pour modifier les paramètres : 
-      - Adresse IP ou DNS : saisir l'adresse que vous avez choisi (dans notre exemple : 192.168.1.100)
+      - Adresse IP ou DNS : saisir l'adresse que vous avez choisi dans le paramétrage de votre box (dans notre exemple : 192.168.1.100)
       - Numéro de port : 8080
       - Timeout de connexion : 2 sec
       - Nombre de portes : pas plus que le nombre de relais de la carte
-9. Retournez sur l'écran d'accueil et testez le bouton Barrière 1. Vous devriez voir un message Barrière 1 OK s'afficher, sinon vérifiez votre connexion Wifi. Vous devriez également entendre le relai changer d'état (ON puis OFF au bout de 300 ms)
+9. Retournez sur l'écran d'accueil de MilkWay et testez le bouton Barrière 1. Vous devriez voir un message Barrière 1 OK s'afficher, sinon vérifiez votre connexion Wifi. Vous devriez également entendre le relai changer d'état (ON puis OFF au bout de 300 ms)
 10. Faire le même test pour la barrière 2 et éventuellement les autres si vous en avez. 
 
-Si cela fonctionne correctement, vous n'aurez plus besoin du programme Esptouch et vous pouvez le désinstaller. 
-
+Si cela fonctionne correctement, vous n'aurez plus besoin du programme Esptouch jusqu'au prochain changement de nom de réseau ou mot de passe de votre connexion wifi et vous pouvez le désinstaller. 
 
 ## Bonus : Commander ses portes depuis n'importe où
 
-Vous pouvez créer un VPN sur votre réseau local (avec par exemple OpenVPN) et y connecter votre smartphone depuis l'extérieur. Cela vous permettra de commander vos barrières oubliées même lorsque que vous n'êtes plus à la ferme. (c'est ici que le timeout de connexion dans le menu de paramètres intervient afin de laisser le temps nécessaire à la bonne connexion selon sa qualité). Il faudra cependant installer une caméra pour visualiser la position des barrières. 
+Vous pouvez créer un VPN sur votre réseau local (avec par exemple OpenVPN ou le VPN proposé dans par votre box si elle le permet) et y connecter votre smartphone depuis l'extérieur. Cela vous permettra de commander vos barrières oubliées même lorsque que vous n'êtes plus à la ferme. Il faudra cependant installer une caméra pour visualiser la position des barrières et qu'il n'y a pas de risque à les manipuler. 
 
-Il est possible de se passer du VPN en utilisant les paramètres NAT de votre box et en utilisant un DNS dynamique (à saisir au lieu de l'adresse IP locale), mais ceci n'est pas du tout sécurisé car n'importe qui pourrait manipuler vos barrières sans authentification.
+L'option de timeout de conexion dans les paramètres de l'application permet d'augmenter le temps toléré maximum pour se connecter au relai wifi, ce qui peut être nécessaire dans le cas d'une réception faible du réseau mobile.  
 
 ## Licence et non-responsabilité
 MilkWay est une application open source sous licence [GPL version 3](LICENSE). Cela signifie que vous êtes libre de télécharger, utiliser et modifier le code source de l'application, sous réserve de respecter les termes de la licence.
