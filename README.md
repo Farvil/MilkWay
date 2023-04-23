@@ -91,6 +91,13 @@ Voici les étapes de configuration :
 
 Si cela fonctionne correctement, vous n'aurez plus besoin du programme Esptouch et vous pouvez le désinstaller. 
 
+
+## Bonus : Commander ses portes depuis n'importe où
+
+Vous pouvez créer un VPN sur votre réseau local (avec par exemple OpenVPN) et y connecter votre smartphone depuis l'extérieur. Cela vous permettra de commander vos barrières oubliées même lorsque que vous n'êtes plus à la ferme. (c'est ici que le timeout de connexion dans le menu de paramètres intervient afin de laisser le temps nécessaire à la bonne connexion selon sa qualité). Il faudra cependant installer une caméra pour visualiser la position des barrières. 
+
+Il est possible de se passer du VPN en utilisant les paramètres NAT de votre box et en utilisant un DNS dynamique (à saisir au lieu de l'adresse IP locale), mais ceci n'est pas du tout sécurisé car n'importe qui pourrait manipuler vos barrières sans authentification.
+
 ## Licence et non-responsabilité
 MilkWay est une application open source sous licence [GPL version 3](LICENSE). Cela signifie que vous êtes libre de télécharger, utiliser et modifier le code source de l'application, sous réserve de respecter les termes de la licence.
 
