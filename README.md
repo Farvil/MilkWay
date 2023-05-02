@@ -48,7 +48,7 @@ Pour la première mise en service, il est conseillé de tester la carte seule sa
 5. Vous devriez pouvoir vous connecter au réseau wifi de la carte depuis votre smartphone. ***Attention : vous allez peut-être recevoir une notification "Impossible de se connecter à Internet via le réseau wifi". Cliquez sur cette notification puis "Ne plus me demander pour ce réseau" et cliquez sur "Oui". Sinon, cela risquera de ne pas fonctionner correctement*** 
 6. Vérifier la bonne connexion de votre smartphone ***au réseau wifi de la carte et non pas au réseau de votre box Internet*** ! 
 7. Ouvrir l'application MilkWay et aller dans le menu de configuration de l'application (icône en forme d'engrenage en haut à droite) pour vérifier les paramètres : 
-      - Adresse IP ou DNS : 192.168.104.1
+      - Adresse IP ou DNS : 192.168.4.1
       - Numéro de port : 8080
       - Timeout de connexion : 2 sec
       - Nombre de portes : pas plus que le nombre de relais de la carte
