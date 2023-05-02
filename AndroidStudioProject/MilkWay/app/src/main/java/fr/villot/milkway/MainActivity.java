@@ -40,6 +40,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.lang.ref.WeakReference;
@@ -64,10 +66,10 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
     private static final byte[] B1_OFF = new byte[] { (byte) 0xA0, (byte) 0x01, (byte) 0x00, (byte) 0xA1};
     private static final byte[] B2_ON = new byte[] { (byte) 0xA0, (byte) 0x02, (byte) 0x01, (byte) 0xA3};
     private static final byte[] B2_OFF = new byte[] { (byte) 0xA0, (byte) 0x02, (byte) 0x00, (byte) 0xA2};
-    private static final byte[] B3_ON = new byte[] { (byte) 0xA0, (byte) 0x02, (byte) 0x01, (byte) 0xA3};
-    private static final byte[] B3_OFF = new byte[] { (byte) 0xA0, (byte) 0x02, (byte) 0x00, (byte) 0xA2};
-    private static final byte[] B4_ON = new byte[] { (byte) 0xA0, (byte) 0x02, (byte) 0x01, (byte) 0xA3};
-    private static final byte[] B4_OFF = new byte[] { (byte) 0xA0, (byte) 0x02, (byte) 0x00, (byte) 0xA2};
+    private static final byte[] B3_ON = new byte[] { (byte) 0xA0, (byte) 0x03, (byte) 0x01, (byte) 0xA4};
+    private static final byte[] B3_OFF = new byte[] { (byte) 0xA0, (byte) 0x03, (byte) 0x00, (byte) 0xA3};
+    private static final byte[] B4_ON = new byte[] { (byte) 0xA0, (byte) 0x04, (byte) 0x01, (byte) 0xA5};
+    private static final byte[] B4_OFF = new byte[] { (byte) 0xA0, (byte) 0x04, (byte) 0x00, (byte) 0xA4};
 
     // membres
     private final Button [] mButtonList = new Button [MAX_BUTTON_NUMBER];
@@ -94,7 +96,10 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
         super.onCreate(savedInstanceState);
 
         // Suppression bouton retour de la Toolbar
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(false);
+        }
 
         // Recuperation des boutons dans la vue
         mButtonList[0] = (Button) findViewById(R.id.bouton1);

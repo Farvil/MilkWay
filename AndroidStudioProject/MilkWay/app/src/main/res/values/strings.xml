@@ -44,7 +44,7 @@
     <string name="msg_err_socket_close">Erreur de fermeture du socket</string>
     <string name="about_text">"\tCette application vous permet de contrôler vos barrières verticales Lely Boetech (ou autres). \n\n\tPour que cela fonctionne, vous devez impérativement installer une carte de relais wifi en parrallèle des boutons poussoirs qui commandent les barrières. Tous les détails techniques sont sur le référentiel Github de l'application à l'adresse https://github.com/Farvil/MilkWay auquel vous pouvez accéder en cliquant sur le bouton rouge ci-dessous. Voici la photo d'une carte supportée : "</string>
     <string name="url_github">https://github.com/Farvil/MilkWay</string>
-    <string name="default_server_ip">192.168.104.1</string>
+    <string name="default_server_ip">192.168.4.1</string>
     <string name="version">"MilkWay version : %1$s"</string>
     <string name="author_name">Auteur : Vincent VILLOT</string>
     <string name="github_button_name">Accès au référentiel Github</string>

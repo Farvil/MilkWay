@@ -45,13 +45,16 @@
             android:name=".AproposActivity"
             android:label="@string/title_activity_apropos_activity"
             android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" >
+        </activity>
 
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_preference_activity"
             android:parentActivityName=".MainActivity"
-            android:exported="false" >
+            android:exported="false"
+            android:screenOrientation="portrait" >
         </activity>
 
         <activity
