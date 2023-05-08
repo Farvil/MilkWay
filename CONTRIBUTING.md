@@ -12,11 +12,11 @@ Si vous détectez une anomalie sur l'application, vous pouvez m'en informer en c
     
 ## Proposer des améliorations
 
-Si vous souhaitez proposer une amélioration ou une nouvelle fonctionnalité pour l'application, vous pouvez créer une nouvelle ["issue"](https://github.com/Farvil/MilkWay/issues) également.
+Si vous souhaitez proposer une amélioration ou une nouvelle fonctionnalité pour l'application, vous pouvez en discuter sur le forum du projet [forum du projet](https://github.com/Farvil/MilkWay/discussions).
 
 ## Contribuer au code source ou à la correction de problèmes
 
-Si vous souhaitez contribuer à la modification du code source de l'application, merci de discuter de votre proposition dans une issue ou dans les discussions du projet. L'outil utilisé est Android Studio. Assurez-vous de suivre les conventions de codage existantes et de tester votre code avant de soumettre une pull request. 
+Si vous souhaitez contribuer à l'évolution du code source, merci de discuter de votre proposition sur le [forum du projet](https://github.com/Farvil/MilkWay/discussions) ou sur l'issue concernée. L'outil utilisé est Android Studio. Assurez-vous de suivre les conventions de codage existantes et de tester votre code avant de soumettre une pull request. 
 
 La procédure à suivre est : 
 - Informer dans l'issue que vous souhaitez aider à sa résolution et attendre une validation pour éviter le travail en double
