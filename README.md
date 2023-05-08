@@ -106,6 +106,8 @@ MilkWay est une application open source sous licence [GPL version 3](LICENSE). C
 
 Veuillez noter que l'application est fournie en l'état, sans garantie d'aucune sorte. Je ne suis en aucun cas responsable des dommages éventuels sur le matériel de l'utilisateur.
 
-## Contribuer au projet
+## Discuter et contribuer au projet
 
-Vous avez trouvé un bug dans l'application, vous avez pensé à une évolution ou vous souhaitez participer au codage de l'application ? Alors rendez vous sur la page [CONTRIBUTING](CONTRIBUTING.md).
+Si vous souhaitez discuter du projet, soumettre des idées ou faire part à la communauté de vos problèmes rencontrés, n'hésitez pas à poster un message sur le forum dédié : [https://github.com/Farvil/MilkWay/discussions](https://github.com/Farvil/MilkWay/discussions).
+
+Si vous souhaitez contribuer au projet pour soumettre des bugs, participer à leur correction, promouvoir l'application, etc, rendez-vous sur la page [CONTRIBUTING](CONTRIBUTING.md).
