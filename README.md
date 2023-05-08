@@ -10,9 +10,9 @@ Voici des captures d'écran de l'application :
 ![Application MilkWay](images/application_2portes.jpg "Application MilkWay")
 ![Application MilkWay](images/application_3portes.jpg "Application MilkWay")
 
-## Obtenir l'application
+## Installation de l'application
 
-L'application peut être installée à partir du Google Play Store en faisant une recherche avec le mot clé "MilkWay". Le lien direct est [https://play.google.com/store/apps/details?id=fr.villot.milkway&gl=FR](https://play.google.com/store/apps/details?id=fr.villot.milkway&gl=FR).
+L'application peut être installée à partir du Google Play Store en faisant une recherche avec le mot clé "MilkWay". Le lien direct est [https://play.google.com/store/apps/details?id=fr.villot.milkway&gl=FR](https://play.google.com/store/apps/details?id=fr.villot.milkway&gl=FR). Si vous ne souhaitez pas passer par Google Play, vous pouvez installer l'application en exécutant sur votre smartphone le fichier .apk de la dernière release : [https://github.com/Farvil/MilkWay/releases](https://github.com/Farvil/MilkWay/releases).
 
 ## Matériel nécessaire
 
@@ -97,7 +97,7 @@ Si cela fonctionne correctement, vous n'aurez plus besoin du programme Esptouch 
 
 ## Bonus : Commander ses portes depuis n'importe où
 
-Vous pouvez créer un VPN sur votre réseau local (avec par exemple OpenVPN ou le VPN proposé dans par votre box si elle le permet) et y connecter votre smartphone depuis l'extérieur. Cela vous permettra de commander vos barrières oubliées même lorsque que vous n'êtes plus à la ferme. Il faudra cependant installer une caméra pour visualiser la position des barrières et qu'il n'y a pas de risque à les manipuler. 
+Vous pouvez créer un VPN sur votre réseau local (avec par exemple OpenVPN ou le VPN proposé dans par votre box si elle le permet) et y connecter votre smartphone depuis l'extérieur. Cela vous permettra de commander vos barrières oubliées même lorsque que vous n'êtes plus à la ferme. Il faudra cependant installer une caméra pour visualiser la position des barrières et vérifier qu'il n'y a pas de risque à les manipuler. 
 
 L'option de timeout de conexion dans les paramètres de l'application permet d'augmenter le temps toléré maximum pour se connecter au relai wifi, ce qui peut être nécessaire dans le cas d'une réception faible du réseau mobile.  
 
