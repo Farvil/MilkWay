@@ -1,6 +1,6 @@
 # MilkWay
 
-MilkWay est une application Android simple et gratuite et open source qui permet aux agriculteurs de commander leurs barrières verticales Lely Boetech (ou autres) depuis leur smartphone. Grâce à MilkWay, vous ne perdrez plus de temps à rechercher la télécommande de vos barrières pour diriger les vaches vers le robot de traite.
+MilkWay est une application Android simple, gratuite et open source qui permet aux agriculteurs de commander leurs barrières verticales Lely Boetech (ou autres) depuis leur smartphone. Grâce à MilkWay, vous ne perdrez plus de temps à rechercher la télécommande de vos barrières pour diriger les vaches vers le robot de traite.
 
 Contrairement à beaucoup d'applications de commande à distance, celle-ci ne contient pas d'annonces publicitaires et ne collecte pas vos données personnelles.
 
@@ -9,6 +9,10 @@ Voici des captures d'écran de l'application :
 ![Logo de MilkWay](images/logo.png "Logo de MilkWay") 
 ![Application MilkWay](images/application_2portes.jpg "Application MilkWay")
 ![Application MilkWay](images/application_3portes.jpg "Application MilkWay")
+
+## Obtenir l'application
+
+L'application peut être installée à partir du Google Play Store en faisant une recherche avec le mot clé "MilkWay". Le lien direct est [https://play.google.com/store/apps/details?id=fr.villot.milkway&gl=FR](https://play.google.com/store/apps/details?id=fr.villot.milkway&gl=FR).
 
 ## Matériel nécessaire
 
