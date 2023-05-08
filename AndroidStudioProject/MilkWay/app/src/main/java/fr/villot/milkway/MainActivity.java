@@ -48,8 +48,9 @@ import java.lang.ref.WeakReference;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
-// TODO : Vérifier les donnees rentrées par l'utilisateur dans les preferences pour eviter plantage application
 // TODO : Remplacer l'async task dépréciée par un thread.
+// TODO : plantage lors de la rotation d'ecran pendant la modification d'un paramètre. Patché en portrait forcé
+// TODO : Gérer correctement les appuis rapprochés sur plusieurs boutons
 
 public class MainActivity extends BaseActivity implements View.OnTouchListener {
 
@@ -102,10 +103,10 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
         }
 
         // Recuperation des boutons dans la vue
-        mButtonList[0] = (Button) findViewById(R.id.bouton1);
-        mButtonList[1] = (Button) findViewById(R.id.bouton2);
-        mButtonList[2] = (Button) findViewById(R.id.bouton3);
-        mButtonList[3] = (Button) findViewById(R.id.bouton4);
+        mButtonList[0] = findViewById(R.id.bouton1);
+        mButtonList[1] = findViewById(R.id.bouton2);
+        mButtonList[2] = findViewById(R.id.bouton3);
+        mButtonList[3] = findViewById(R.id.bouton4);
 
         // Action des boutons
         for (Button button : mButtonList) {
