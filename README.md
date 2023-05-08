@@ -12,7 +12,7 @@ Voici des captures d'écran de l'application :
 
 ## Installation de l'application
 
-L'application peut être installée à partir du Google Play Store en faisant une recherche avec le mot clé "MilkWay". Le lien direct est [https://play.google.com/store/apps/details?id=fr.villot.milkway&gl=FR](https://play.google.com/store/apps/details?id=fr.villot.milkway&gl=FR). Si vous ne souhaitez pas passer par Google Play, vous pouvez installer l'application en exécutant sur votre smartphone le fichier .apk de la dernière release : [https://github.com/Farvil/MilkWay/releases](https://github.com/Farvil/MilkWay/releases).
+L'application peut être installée à partir du Google Play Store en faisant une recherche avec le mot clé "MilkWay". Le lien direct est [https://play.google.com/store/apps/details?id=fr.villot.milkway](https://play.google.com/store/apps/details?id=fr.villot.milkway). Si vous ne souhaitez pas passer par Google Play, vous pouvez installer l'application en exécutant sur votre smartphone le fichier .apk de la dernière [release](https://github.com/Farvil/MilkWay/releases).
 
 ## Matériel nécessaire
 
