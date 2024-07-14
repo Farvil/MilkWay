@@ -23,15 +23,17 @@
 
 package fr.villot.milkway;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.firebase.BuildConfig;
+
+import java.lang.reflect.Field;
 
 public class AproposActivity extends BaseActivity {
 
@@ -46,10 +48,18 @@ public class AproposActivity extends BaseActivity {
 
         // Mise à jour de la version de MilkWay
         TextView versionNameTextView = findViewById(R.id.version_name);
-        versionNameTextView.setText(getString(R.string.version, BuildConfig.VERSION_NAME));
+
+        try {
+            PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            String versionName = packageInfo.versionName;
+            versionNameTextView.setText(getString(R.string.version, versionName));
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
 
         // Action sur click du bouton
-        Button githubButton = (Button)findViewById(R.id.buttonGitHub);
+        Button githubButton = findViewById(R.id.buttonGitHub);
         githubButton.setOnClickListener(v -> onGitHubButtonClicked());
     }
 

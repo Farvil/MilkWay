@@ -25,6 +25,8 @@ package fr.villot.milkway;
 import android.app.Application;
 import android.content.res.Resources;
 
+import com.google.firebase.BuildConfig;
+
 public class App extends Application {
 
     private static Resources res;
