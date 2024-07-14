@@ -1,6 +1,6 @@
 # MilkWay
 
-MilkWay est une application Android simple et gratuite et open source qui permet aux agriculteurs de commander leurs barrières verticales Lely Boetech (ou autres) depuis leur smartphone. Grâce à MilkWay, vous ne perdrez plus de temps à rechercher la télécommande de vos barrières pour diriger les vaches vers le robot de traite.
+MilkWay est une application Android simple, gratuite et open source qui permet aux agriculteurs de commander leurs barrières verticales Lely Boetech (ou autres) depuis leur smartphone. Grâce à MilkWay, vous ne perdrez plus de temps à rechercher la télécommande de vos barrières pour diriger les vaches vers le robot de traite.
 
 Contrairement à beaucoup d'applications de commande à distance, celle-ci ne contient pas d'annonces publicitaires et ne collecte pas vos données personnelles.
 
@@ -9,6 +9,10 @@ Voici des captures d'écran de l'application :
 ![Logo de MilkWay](images/logo.png "Logo de MilkWay") 
 ![Application MilkWay](images/application_2portes.jpg "Application MilkWay")
 ![Application MilkWay](images/application_3portes.jpg "Application MilkWay")
+
+## Installation de l'application
+
+L'application peut être installée à partir du Google Play Store en faisant une recherche avec le mot clé "MilkWay". Le lien direct est [https://play.google.com/store/apps/details?id=fr.villot.milkway](https://play.google.com/store/apps/details?id=fr.villot.milkway). Si vous ne souhaitez pas passer par Google Play, vous pouvez installer l'application en exécutant sur votre smartphone le fichier .apk de la dernière [release](https://github.com/Farvil/MilkWay/releases).
 
 ## Matériel nécessaire
 
@@ -93,7 +97,7 @@ Si cela fonctionne correctement, vous n'aurez plus besoin du programme Esptouch 
 
 ## Bonus : Commander ses portes depuis n'importe où
 
-Vous pouvez créer un VPN sur votre réseau local (avec par exemple OpenVPN ou le VPN proposé dans par votre box si elle le permet) et y connecter votre smartphone depuis l'extérieur. Cela vous permettra de commander vos barrières oubliées même lorsque que vous n'êtes plus à la ferme. Il faudra cependant installer une caméra pour visualiser la position des barrières et qu'il n'y a pas de risque à les manipuler. 
+Vous pouvez créer un VPN sur votre réseau local (avec par exemple OpenVPN ou le VPN proposé dans par votre box si elle le permet) et y connecter votre smartphone depuis l'extérieur. Cela vous permettra de commander vos barrières oubliées même lorsque que vous n'êtes plus à la ferme. Il faudra cependant installer une caméra pour visualiser la position des barrières et vérifier qu'il n'y a pas de risque à les manipuler. 
 
 L'option de timeout de conexion dans les paramètres de l'application permet d'augmenter le temps toléré maximum pour se connecter au relai wifi, ce qui peut être nécessaire dans le cas d'une réception faible du réseau mobile.  
 
@@ -102,6 +106,8 @@ MilkWay est une application open source sous licence [GPL version 3](LICENSE). C
 
 Veuillez noter que l'application est fournie en l'état, sans garantie d'aucune sorte. Je ne suis en aucun cas responsable des dommages éventuels sur le matériel de l'utilisateur.
 
-## Contribuer au projet
+## Discuter et contribuer au projet
 
-Vous avez trouvé un bug dans l'application, vous avez pensé à une évolution ou vous souhaitez participer au codage de l'application ? Alors rendez vous sur la page [CONTRIBUTING](CONTRIBUTING.md).
+Si vous souhaitez discuter du projet, soumettre des idées ou faire part à la communauté de vos problèmes rencontrés, n'hésitez pas à poster un message sur le [forum dédié au projet](https://github.com/Farvil/MilkWay/discussions).
+
+Si vous souhaitez contribuer au projet, rendez-vous sur la page [CONTRIBUTING](CONTRIBUTING.md).
