@@ -28,12 +28,11 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.firebase.BuildConfig;
-
-import java.lang.reflect.Field;
+//import com.google.firebase.BuildConfig;
 
 public class AproposActivity extends BaseActivity {
 
@@ -54,7 +53,7 @@ public class AproposActivity extends BaseActivity {
             String versionName = packageInfo.versionName;
             versionNameTextView.setText(getString(R.string.version, versionName));
         } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
+            Log.e("VersionInfo", "Erreur lors de la récupération du nom de version", e);
         }
 
 
